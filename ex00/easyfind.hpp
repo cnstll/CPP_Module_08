@@ -1,16 +1,18 @@
+#include <algorithm>
+#include <exception>
 
-int hay = 442;
-std::vector<int>::const_iterator it;
-it = vect1.begin();
-while (it != vect1.end()){
+class ExceptionElementNotFound : public std::exception {
+    public :
+        const char* what() const throw() { return "Element not found"; };
+};
 
-    if (*it == hay)
-    {
-        std::cout << "Hay found at index: " << *it << std::endl;
-        break ;
-        //return *it;
-    }
-    ++it;
-}
-if (it == vect1.end())
-    std::cout << "Hay not found" << std::endl; // Throw exception
+template <typename T>
+typename T::iterator easyfind(T &hayStack, int &needle){
+
+    typename T::iterator returnValue;
+    returnValue = std::find(hayStack.begin(), hayStack.end(), needle);
+    if (returnValue == hayStack.end())
+        throw ExceptionElementNotFound();
+    else
+        return returnValue;
+};
