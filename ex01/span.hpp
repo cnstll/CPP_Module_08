@@ -19,10 +19,16 @@ class Span {
 			public:
 				const char *what() const throw();
 		};
+		class ExceptionVectorCapacityInsufficient : public std::exception {
+			public:
+				const char *what() const throw();
+		};
 
 	private:
 		std::vector<int> _arr;
 		static void _printElement(int &n);
+		bool _vectorCapacityIsSufficient(int nbrElementsToAdd);
+		bool _checkSpan(void);
 
 };
 #endif
