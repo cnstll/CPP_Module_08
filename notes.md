@@ -33,9 +33,12 @@ Mainly 2 types of containers:
 * " *Value containers* are compositions that store copies of the objects that they are holding (and thus are responsible for creating and destroying those copies)."
 * " *Reference containers* are aggregations that store pointers or references to other objects "
 
-# STL Containers 
+## STL Containers 
 STL stands for STandard Library. It holds multiple classes such as containers, iterators and algorithms.
 STL containers are of 3 basics types:
 * Sequence Container: this kind of container will keep elements in the order they were provided : `std::array`, `std::list`, `std::deque`, `std::vector`...
 * Associative Container: this kind of container will automatically sort provided elements: `std::set` (collection of unique sorted keys), `std::multiset`(collection of sorted keys), `std::map` (collection of unique sorted key-pair elements), `std::multimap` (collection of sorted key-pair elements)
 * Adapaters Container: this kind of container will adapt the behaviour of sequence containers: `std::stack`(elements are operated on a LIFO bases), `std::queue` (elements are operated on a FIFO base), `std::priority_queue`
+
+## Iterator
+[Source on how to build custom iterators](https://internalpointers.com/post/writing-custom-iterators-modern-cpp)
