@@ -1,9 +1,7 @@
-#include "span.hpp"
+#include "Span.hpp"
 #include <algorithm>
 #include <iterator>
 #include <iostream>
-#include <numeric>
-#include <limits>
 #include <vector>
 
 Span::Span( unsigned int N ) {
@@ -15,10 +13,22 @@ Span::Span( unsigned int N ) {
 	return ;
 };
 
+Span::Span( Span const &src ) : _arr(src._arr) {
+
+	//std::cout << "Span - Copy Constructor called\n";
+	return ;
+};
+
 Span::~Span( void ){
 
-	//std::cout << "span - Destructor called\n";
+	//std::cout << "Span - Destructor called\n";
 	return ;
+};
+
+Span &Span::operator= (Span &rhs){
+
+	this->_arr = rhs._arr;
+	return *this;
 };
 
 void Span::addNumber(const int &n){
@@ -93,5 +103,5 @@ const char* Span::ExceptionNoSpanToFind::what() const throw(){
 
 const char* Span::ExceptionVectorCapacityInsufficient::what() const throw(){
 
-	return "Vector capacity insufficient";
+	return "Span capacity insufficient";
 };

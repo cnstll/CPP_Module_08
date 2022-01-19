@@ -1,4 +1,4 @@
-#include "span.hpp"
+#include "Span.hpp"
 #include <algorithm>
 #include <iostream>
 #include <exception>
@@ -35,11 +35,13 @@ int main(void)
     { 
         std::cout << "Test: Simple Span\n";
         Span sp = Span(5);
+        std::cout << "Trying to add 5 elements to span..\n";
         sp.addNumber(5);
         sp.addNumber(3);
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
+        std::cout << "Trying to add a 6th element..\n";
         try {
             sp.addNumber(12);
         }
@@ -56,6 +58,7 @@ int main(void)
         std::cout << std::endl;
         std::cout << "Test: Simple Span with negative numbers\n";
         Span sp = Span(5);
+        std::cout << "Trying to add 5 elements to span..\n";
         sp.addNumber(-1);
         sp.addNumber(16);
         sp.addNumber(-17);
@@ -71,7 +74,7 @@ int main(void)
         std::cout << std::endl;
         std::cout << "Test: No Span\n";
         Span sp = Span(5);
-        printSpanWithName(sp, "sp");
+        std::cout << "Span is empty\n";
         try {
 
             std::cout << "Longest span: ";
