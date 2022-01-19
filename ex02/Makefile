@@ -1,7 +1,6 @@
-NAME = span 
+NAME = mutantstack 
 
-SRCS = main.cpp \
-span.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
